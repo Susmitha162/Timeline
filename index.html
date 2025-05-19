@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        .timeline{
+            padding: 20px;
+            margin: auto;
+        }
+        .timeline-item{
+            padding-left: 20px;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        .timeline-item:not(:last-child)::before{
+            content: "";
+            position:absolute;
+            top:10px;
+            left:6px;
+            width:2px;
+            height: 100%;
+            background-color: darkturquoise;
+        }
+        .timeline-item .dot::before{
+            content:"";
+            position :absolute;
+            top:10px;
+            left:0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .timeline-item.completed .dot::before{
+            background-color: blue;
+        }
+        .timeline-item.current .dot::before{
+            width: 12px;
+            height:12px;
+            left: -4px;
+            border: 2px solid rgb(5, 142, 37);
+            background-color: rgb(13, 132, 4);
+            padding:3px;
+            background-clip: content-box;
+        }
+
+        .timeline-item.delivered .dot::before{
+            background-color: green;
+        }
+        .timeline-item .date{
+            font-size: 15px;
+            color: #555;
+            font-weight: 600;;
+
+        }
+        .timeline-item .status{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .timeline-item .content{
+            padding:10px;
+            border-radius: 4px;
+            box-shadow: 3px 4px 4px rgb(90, 6, 6);
+
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgb(220, 16, 247);
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <h1>My 2nd mini project </h1>
+        <div class="timeline-item completed">
+            <div class="dot">
+                <div class="date">september 4 2025</div>
+                <div class="status">Order Purchased</div>
+                <div class="content">
+                    Your order has been palced succesfull confirmation with the order details.
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item completed">
+            <div class="dot">
+                <div class="date">september 5 2025</div>
+                <div class="status">Order Proceesed</div>
+                <div class="content">
+                    Your order has been palced succesfull confirmation with the order details.
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item completed">
+            <div class="dot">
+                <div class="date">september 6 2025</div>
+                <div class="status">Shipped</div>
+                <div class="content">
+                    Your order has been palced succesfull confirmation with the order details.
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item current">
+            <div class="dot">
+                <div class="date">september 8 2025</div>
+                <div class="status">Delivery</div>
+                <div class="content">
+                    Your order has been palced succesfull confirmation with the order details.
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="dot">
+                <div class="date">september 10 2025</div>
+                <div class="status">Delivered</div>
+                <div class="content">
+                    Your order has been palced succesfull confirmation with the order details.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
